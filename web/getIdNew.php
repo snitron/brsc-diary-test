@@ -23,11 +23,12 @@ use Behat\Mink\Driver\GoutteDriver;
     $html = new Document($snoopy->results);
 
     $id = parseId($html->find("a.h5")[0]->getAttribute("href"));*/
+$id = '123456';
 
+    session_name($id);
     session_start();
 
-    $id = '123456';
-    
+
     if($id == ""){
         echo "";
         session_register_shutdown();
@@ -41,8 +42,6 @@ use Behat\Mink\Driver\GoutteDriver;
         $user['child_ids'] = null;
 
         $_SESSION[$id ] = $user;
-
-        echo session_name();
         session_commit();
     }
 
