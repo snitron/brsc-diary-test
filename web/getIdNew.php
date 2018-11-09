@@ -1,6 +1,5 @@
 <?php
 require __DIR__ . "/../vendor/autoload.php";
-require __DIR__ . "/../web";
 
 use Snoopy\Snoopy;
 use \DiDom\Document;
@@ -25,7 +24,7 @@ use Behat\Mink\Driver\GoutteDriver;
 
     $id = parseId($html->find("a.h5")[0]->getAttribute("href"));*/
 
-    require User::class;
+    require "User.php";
 
     $id = 123456;
     
