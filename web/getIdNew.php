@@ -26,6 +26,8 @@ use Behat\Mink\Driver\GoutteDriver;
 
     require "User.php";
 
+    session_start();
+
     $id = '123456';
     
     if($id == ""){
