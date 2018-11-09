@@ -25,7 +25,6 @@ use Behat\Mink\Driver\GoutteDriver;
     $id = parseId($html->find("a.h5")[0]->getAttribute("href"));*/
 $id = '123456';
 
-    session_name("test");
     session_start();
 
 
@@ -41,9 +40,11 @@ $id = '123456';
         $user['password'] = $password;
         $user['child_ids'] = null;
 
-        $_SESSION[$id ] = $user;
+        $_SESSION[$id] = $user;
         session_commit();
     }
+
+
 
 
 
