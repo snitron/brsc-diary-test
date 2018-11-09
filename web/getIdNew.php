@@ -24,8 +24,6 @@ use Behat\Mink\Driver\GoutteDriver;
 
     $id = parseId($html->find("a.h5")[0]->getAttribute("href"));*/
 
-    require "User.php";
-
     session_start();
 
     $id = '123456';
