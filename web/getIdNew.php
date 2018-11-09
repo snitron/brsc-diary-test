@@ -26,7 +26,7 @@ use Behat\Mink\Driver\GoutteDriver;
 
     require "User.php";
 
-    $id = 123456;
+    $id = '123456';
     
     if($id == ""){
         echo "";
@@ -40,8 +40,8 @@ use Behat\Mink\Driver\GoutteDriver;
         $user['password'] = $password;
         $user['child_ids'] = null;
 
-        $_SESSION[$id . ""] = $user;
-        session_commit();
+        $_SESSION[$id ] = $user;
+      //  session_commit();
     }
 
 
