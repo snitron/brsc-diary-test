@@ -41,6 +41,8 @@ use Behat\Mink\Driver\GoutteDriver;
         $user['child_ids'] = null;
 
         $_SESSION[$id ] = $user;
+
+        echo session_name();
         session_commit();
     }
 
