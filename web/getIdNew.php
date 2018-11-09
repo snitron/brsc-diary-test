@@ -34,12 +34,14 @@ use Behat\Mink\Driver\GoutteDriver;
     }else{
         echo $id;
 
-        $user = new User();
-        $user->login = $login;
-        $user->password = $password;
-        $user->child_ids = null;
+        $user = array();
 
-        $_SESSION[$id . ""] = json_encode($user);
+        $user['login'] = $login;
+        $user['password'] = $password;
+        $user['child_ids'] = null;
+
+        $_SESSION[$id . ""] = $user;
+        session_commit();
     }
 
 
