@@ -12,4 +12,4 @@ $test = filter_input(INPUT_GET, "test", FILTER_SANITIZE_STRING);
 
 $s = $_SESSION[$id];
 
-echo $test == null;
+echo $test == null ? "true" : "else";
