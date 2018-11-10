@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . "/../vendor/autoload.php";
+require "User.php";
 
 use Snoopy\Snoopy;
 use \DiDom\Document;
