@@ -61,6 +61,8 @@ $headers = getallheaders();
         } else
             $user = null;
 
+
+        
         echo json_encode($user);
     } else {
         $snoopy = new Snoopy();
