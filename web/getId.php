@@ -50,7 +50,7 @@ $headers = getallheaders();
                 $user->parent_id = null;
             }
 
-            $user->session_id = "PHPSESSID=" . session_id();
+            $user->sess_id = "PHPSESSID=" . session_id();
 
             $sess_data = array();
 
@@ -62,7 +62,7 @@ $headers = getallheaders();
             $user = null;
 
 
-        
+
         echo json_encode($user);
     } else {
         $snoopy = new Snoopy();
