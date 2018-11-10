@@ -8,7 +8,7 @@ error_reporting(E_ALL);
 $login = filter_input(INPUT_GET, "login", FILTER_SANITIZE_STRING);
 $password = filter_input(INPUT_GET, "password", FILTER_SANITIZE_STRING);
 
-$id = "123456";
+$id = "test123456";
 
 session_start();
 
