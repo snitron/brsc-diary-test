@@ -8,6 +8,7 @@ use \DiDom\Document;
 $login = filter_input(INPUT_GET, "login", FILTER_SANITIZE_STRING);
 $password = filter_input(INPUT_GET, "password", FILTER_SANITIZE_STRING);
 
+
 session_start();
 $snoopy = new Snoopy();
 
@@ -30,13 +31,16 @@ if (count($check_login) != 0) {
             for ($i = 0; $i < count($child_ids); $i++)
                 $user->child_ids[$i] = parseId($child_ids[$i]->getAttribute("href"));
             $user->id = null;
+            $user->sess_index = "user_index" . $user->child_ids[0];
         } else {
             $user->child_ids = null;
             $user->id = parseId($html->find("a.h5")[0]->getAttribute("href"));
+            $user->sess_index = "user_index" . $id;
         }
     } else {
         $user->child_ids = null;
         $user->id = parseId($html->find("a.h5")[0]->getAttribute("href"));
+        $user->sess_index = "user_index" . $id;
     }
 
     $user->session_id = "PHPSESSID=" . session_id();
@@ -45,7 +49,7 @@ if (count($check_login) != 0) {
 
     $sess_data['login'] = $login;
     $sess_data['password'] = $password;
-    $_SESSION[$id] = $sess_data;
+    $_SESSION[$user->sess_index] = $sess_data;
     session_commit();
 } else
     $user = null;

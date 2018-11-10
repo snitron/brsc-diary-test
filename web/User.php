@@ -2,5 +2,7 @@
 class User{
     public $child_ids = array();
     public $id = "";
-    public $session_id = "";
+    public $sess_id = "";
+    public $sess_index = "";
+    public $parent_id = "";
 }
