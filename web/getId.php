@@ -6,7 +6,7 @@ use Snoopy\Snoopy;
 use \DiDom\Document;
 
 $headers = getallheaders();
-if ($headers['User-Agent'] == 'Nitron Apps BRSC Diary Http Connector') {
+//if ($headers['User-Agent'] == 'Nitron Apps BRSC Diary Http Connector') {
     $login = filter_input(INPUT_GET, "login", FILTER_SANITIZE_STRING);
     $password = filter_input(INPUT_GET, "password", FILTER_SANITIZE_STRING);
     $version = filter_input(INPUT_GET, "version", FILTER_SANITIZE_STRING);
@@ -72,7 +72,7 @@ if ($headers['User-Agent'] == 'Nitron Apps BRSC Diary Http Connector') {
 
         echo parseId($html->find("a.h5")[0]->getAttribute("href"));
     }
-}
+//}
 
 function parseId($string)
 {
