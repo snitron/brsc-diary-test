@@ -8,7 +8,7 @@ session_start();
 
 $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_STRING) . "";
 
-$test = filter_input(INPUT_GET, "test", FILTER_SANITIZE_STRING) . "";
+$test = filter_input(INPUT_GET, "test", FILTER_SANITIZE_STRING);
 
 $s = $_SESSION[$id];
 
