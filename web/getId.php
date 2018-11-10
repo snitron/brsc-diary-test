@@ -52,6 +52,7 @@ $headers = getallheaders();
 
             $user->sess_id = "PHPSESSID=" . session_id();
 
+            
             $sess_data = array();
 
             $sess_data['login'] = $login;
