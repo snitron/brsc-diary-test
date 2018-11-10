@@ -14,9 +14,12 @@ $post_array['Login'] = $login;
 $post_array['Password'] = $password;
 
 $snoopy->maxredirs = 2;
+$snoopy->cookies = array("PHPSESSID=". session_id());
+$snoopy->setcookies();
 $snoopy->submit("https://edu.brsc.ru/Logon/Index", $post_array);
 $snoopy->results;
 $snoopy->cookies = array("PHPSESSID=". session_id());
+$snoopy->setcookies();
 
 $snoopy->submit("https://edu.brsc.ru/privateoffice", $post_array);
 
