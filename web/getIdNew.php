@@ -21,7 +21,7 @@ $snoopy->results;
 $snoopy->cookies = array("PHPSESSID=". session_id());
 $snoopy->setcookies();
 
-$snoopy->submit("https://edu.brsc.ru/privateoffice", $post_array);
+$snoopy->submit("https://edu.brsc.ru/privateoffice");
 
 echo $snoopy->results;
 /*
