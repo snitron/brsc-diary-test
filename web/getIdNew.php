@@ -21,31 +21,34 @@ $snoopy->submit("https://edu.brsc.ru/User/Diary");
 
 $html = new Document($snoopy->results);
 $user = new User();
-
-$child_ids = $html->find("div.btn-group");
-if (count($child_ids) != 0) {
-    $child_ids = $child_ids[0]->find("a");
+$check_login = $html->find("tr");
+if (count($check_login) != 0) {
+    $child_ids = $html->find("div.btn-group");
     if (count($child_ids) != 0) {
-        for ($i = 0; $i < count($child_ids); $i++)
-            $user->child_ids[$i] = parseId($child_ids[$i]->getAttribute("href"));
-        $user->id = null;
+        $child_ids = $child_ids[0]->find("a");
+        if (count($child_ids) != 0) {
+            for ($i = 0; $i < count($child_ids); $i++)
+                $user->child_ids[$i] = parseId($child_ids[$i]->getAttribute("href"));
+            $user->id = null;
+        } else {
+            $user->child_ids = null;
+            $user->id = parseId($html->find("a.h5")[0]->getAttribute("href"));
+        }
     } else {
         $user->child_ids = null;
         $user->id = parseId($html->find("a.h5")[0]->getAttribute("href"));
     }
-} else {
-    $user->child_ids = null;
-    $user->id = parseId($html->find("a.h5")[0]->getAttribute("href"));
-}
 
-$user->session_id = "PHPSESSID=". session_id();
+    $user->session_id = "PHPSESSID=" . session_id();
 
-$sess_data = array();
+    $sess_data = array();
 
-$sess_data['login'] = $login;
-$sess_data['password'] = $password;
-$_SESSION[$id] = $sess_data;
-session_commit();
+    $sess_data['login'] = $login;
+    $sess_data['password'] = $password;
+    $_SESSION[$id] = $sess_data;
+    session_commit();
+} else
+    $user = null;
 
 echo json_encode($user);
 
