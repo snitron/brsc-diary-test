@@ -18,9 +18,6 @@ $post_array['Password'] = $password;
 $snoopy->maxredirs = 2;
 $snoopy->submit("https://edu.brsc.ru/Logon/Index", $post_array);
 $snoopy->submit("https://edu.brsc.ru/User/Diary");
-echo $snoopy->results;
-
-
 
 $html = new Document($snoopy->results);
 $user = new User();
@@ -50,7 +47,7 @@ $sess_data['password'] = $password;
 $_SESSION[$id] = $sess_data;
 session_commit();
 
-return json_encode($user);
+echo json_encode($user);
 
 function parseId($string)
 {
