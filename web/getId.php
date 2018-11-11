@@ -14,6 +14,12 @@ $headers = getallheaders();
     if ($version != null) { //for eldery version support. delete in the future
         ini_set('session.use_cookies', 1);
 
+        try {
+            $token = md5(bin2hex(random_bytes(16)));
+        } catch (Exception $e) {}
+
+        session_name($token);
+
         session_start();
         $snoopy = new Snoopy();
 
