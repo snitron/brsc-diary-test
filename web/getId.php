@@ -58,7 +58,7 @@ $headers = getallheaders();
                 $user->parent_id = null;
             }
 
-            $user->sess_id = "PHPSESSID=" . session_id();
+            $user->sess_id = $token;
 
 
             $sess_data = array();
