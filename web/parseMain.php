@@ -26,6 +26,8 @@ $headers = getallheaders();
 if ($headers['User-Agent'] == 'Nitron Apps BRSC Diary Http Connector') {
     session_start();
 
+    ini_set('session.use_cookies', 1);
+
     $userID = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING);
     $sess_index = filter_input(INPUT_GET, 'sess_index', FILTER_SANITIZE_STRING);
 

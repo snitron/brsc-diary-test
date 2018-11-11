@@ -12,6 +12,8 @@ $headers = getallheaders();
     $version = filter_input(INPUT_GET, "version", FILTER_SANITIZE_STRING);
 
     if ($version != null) { //for eldery version support. delete in the future
+        ini_set('session.use_cookies', 1);
+
         session_start();
         $snoopy = new Snoopy();
 
@@ -52,7 +54,7 @@ $headers = getallheaders();
 
             $user->sess_id = "PHPSESSID=" . session_id();
 
-            
+
             $sess_data = array();
 
             $sess_data['login'] = $login;
