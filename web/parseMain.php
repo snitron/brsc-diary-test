@@ -24,9 +24,7 @@ class DaySheldule
 
 $headers = getallheaders();
 //if ($headers['User-Agent'] == 'Nitron Apps BRSC Diary Http Connector') {
-    $token =  filter_input(INPUT_GET, 'token', FILTER_SANITIZE_STRING);
-    if($token != null) {
-        session_name($token);
+
         session_start();
 
         ini_set('session.use_cookies', 1);
@@ -48,7 +46,7 @@ $headers = getallheaders();
 
         $week = filter_input(INPUT_GET, "week", FILTER_SANITIZE_STRING);
         $snoopy->submit("https://edu.brsc.ru/User/Diary?UserId=" . $userID . "&Week=" . $week . "&dep=0");
-    }
+
     $html = new Document($snoopy->results);
 
     $elements = $html->find("table");
