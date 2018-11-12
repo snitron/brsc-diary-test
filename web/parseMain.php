@@ -42,6 +42,9 @@ ini_set('session.use_cookies', 1);
         $post_array['Login'] = $data['login'];
         $post_array['Password'] = $data['password'];
 
+        echo $post_array['Login'];
+        echo $post_array['Password'];
+
         $snoopy->maxredirs = 2;
         $snoopy->submit("https://edu.brsc.ru/Logon/Index", $post_array);
         $snoopy->results;
