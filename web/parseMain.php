@@ -22,105 +22,100 @@ class DaySheldule
     );
 }
 
-$headers = getallheaders();
-//if ($headers['User-Agent'] == 'Nitron Apps BRSC Diary Http Connector') {
-
 ini_set('display_startup_errors', 1);
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 ini_set('session.use_cookies', 1);
 
-        session_start();
+session_start();
 
 
-        $userID = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING);
-        $sess_index = filter_input(INPUT_GET, 'sess_index', FILTER_SANITIZE_STRING);
+$userID = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING);
+$sess_index = filter_input(INPUT_GET, 'sess_index', FILTER_SANITIZE_STRING);
 
-        $data = $_SESSION[$sess_index];
+$data = $_SESSION[$sess_index];
 
-        $snoopy = new Snoopy();
+$snoopy = new Snoopy();
 
-        $post_array = array();
-        $post_array['Login'] = $data['login'];
-        $post_array['Password'] = $data['password'];
+$post_array = array();
+$post_array['Login'] = $data['login'];
+$post_array['Password'] = $data['password'];
 
-        echo $post_array['Login'];
-        echo $post_array['Password'];
+echo $post_array['Login'];
+echo $post_array['Password'];
 
-        $snoopy->maxredirs = 2;
-        $snoopy->submit("https://edu.brsc.ru/Logon/Index", $post_array);
-        $snoopy->results;
+$snoopy->maxredirs = 2;
+$snoopy->submit("https://edu.brsc.ru/Logon/Index", $post_array);
+$snoopy->results;
 
-        $week = filter_input(INPUT_GET, "week", FILTER_SANITIZE_STRING);
-        $snoopy->submit("https://edu.brsc.ru/User/Diary?UserId=" . $userID . "&Week=" . $week . "&dep=0");
+$week = filter_input(INPUT_GET, "week", FILTER_SANITIZE_STRING);
+$snoopy->submit("https://edu.brsc.ru/User/Diary?UserId=" . $userID . "&Week=" . $week . "&dep=0");
 
-    $html = new Document($snoopy->results);
+$html = new Document($snoopy->results);
 
-    $elements = $html->find("table");
-    $days = array();
+$elements = $html->find("table");
+$days = array();
 
-    $daysNames = $html->find("div > h3");
+$daysNames = $html->find("div > h3");
 
-    for ($i = 0; $i < count($elements); $i++) {
-        $day = new DaySheldule();
+for ($i = 0; $i < count($elements); $i++) {
+    $day = new DaySheldule();
 
-        $trS = $elements[$i]->find("tr.tableborder");
-        $day->isWeekend = false;
-        $day->count = count($trS);
+    $trS = $elements[$i]->find("tr.tableborder");
+    $day->isWeekend = false;
+    $day->count = count($trS);
 
-        for ($j = 0; $j < count($trS); $j++) {
-            $wasEmpty = false;
+    for ($j = 0; $j < count($trS); $j++) {
+        $wasEmpty = false;
 
-            $day->lessons[$j] = count($trS[$j]->find("div[title]")) != 0 ? strip_tags($trS[$j]->find("div[title]")[0]->text()) : $wasEmpty = true;
+        $day->lessons[$j] = count($trS[$j]->find("div[title]")) != 0 ? strip_tags($trS[$j]->find("div[title]")[0]->text()) : $wasEmpty = true;
 
-            if ($wasEmpty) {
-                $day->isWeekend = true;
-                $day->count = 1;
-                break;
-            }
-
-            $marks = $trS[$j]->find("td")[4]->text();
-
-            if (strlen($marks) != 0)
-                $day->marks[$j] = strip_tags($marks);
-            else
-                $day->marks[$j] = "";
-
-            $tmp_hw = $trS[$j]->find('td[data-lessonid]')[0]->text();
-
-            if (strlen($tmp_hw) != 0)
-                $day->homeworks[$j] = strip_tags($tmp_hw);
-            else
-                $day->homeworks[$j] = "";
-
-            $a = $trS[$j]->find('td[data-lessonid]')[0]->find('a');
-
-            if (count($a) != 0) {
-                for ($k = 1; $k < count($a); $k++)
-                    if ($a[$k] != null && $a[$k]->attr('href') != "#" && $a[$k]->attr('href') != "") {
-                        $day->hrefHw[$j][$k - 1] = $a[$k]->attr("href");
-                        $day->hrefHwNames[$j][$k - 1] = trim(strip_tags($a[$k]->text()));
-                    } else {
-                        $day->hrefHw[$j][$k - 1] = null;
-                        $days->hrefHwNames[$j][$k - 1] = null;
-                    }
-            } else {
-                $day->hrefHw[$j] = null;
-                $day->hrefHwNames[$j] = null;
-            }
-
-            $day->teacherComment[$j] = trim($trS[$j]->find("td")[5]->text()) != "" ? trim($trS[$j]->find("td")[5]->text()) : null;
-
-            array_filter($day->hrefHw[$j], function ($value) {
-                return $value !== '' && $value !== null;
-            });
+        if ($wasEmpty) {
+            $day->isWeekend = true;
+            $day->count = 1;
+            break;
         }
 
+        $marks = $trS[$j]->find("td")[4]->text();
 
-        $day->dayName = strip_tags($daysNames[$i + 1]->text());
-        $days[$i] = $day;
-   // }
+        if (strlen($marks) != 0)
+            $day->marks[$j] = strip_tags($marks);
+        else
+            $day->marks[$j] = "";
 
+        $tmp_hw = $trS[$j]->find('td[data-lessonid]')[0]->text();
+
+        if (strlen($tmp_hw) != 0)
+            $day->homeworks[$j] = strip_tags($tmp_hw);
+        else
+            $day->homeworks[$j] = "";
+
+        $a = $trS[$j]->find('td[data-lessonid]')[0]->find('a');
+
+        if (count($a) != 0) {
+            for ($k = 1; $k < count($a); $k++)
+                if ($a[$k] != null && $a[$k]->attr('href') != "#" && $a[$k]->attr('href') != "") {
+                    $day->hrefHw[$j][$k - 1] = $a[$k]->attr("href");
+                    $day->hrefHwNames[$j][$k - 1] = trim(strip_tags($a[$k]->text()));
+                } else {
+                    $day->hrefHw[$j][$k - 1] = null;
+                    $days->hrefHwNames[$j][$k - 1] = null;
+                }
+        } else {
+            $day->hrefHw[$j] = null;
+            $day->hrefHwNames[$j] = null;
+        }
+
+        $day->teacherComment[$j] = trim($trS[$j]->find("td")[5]->text()) != "" ? trim($trS[$j]->find("td")[5]->text()) : null;
+
+        array_filter($day->hrefHw[$j], function ($value) {
+            return $value !== '' && $value !== null;
+        });
+    }
+
+
+    $day->dayName = strip_tags($daysNames[$i + 1]->text());
+    $days[$i] = $day;
 
 }
 echo json_encode($days);
