@@ -25,7 +25,9 @@ class DaySheldule
 $headers = getallheaders();
 //if ($headers['User-Agent'] == 'Nitron Apps BRSC Diary Http Connector') {
 
-
+ini_set('display_startup_errors', 1);
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 ini_set('session.use_cookies', 1);
 
         session_start();
