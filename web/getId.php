@@ -52,8 +52,6 @@ if ($version != null) { //for eldery version support. delete in the future
             $user->parent_id = null;
         }
 
-        $user->sess_id = $token;
-
 
         $sess_data = array();
 

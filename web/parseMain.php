@@ -114,6 +114,6 @@ $headers = getallheaders();
         $days[$i] = $day;
    // }
 
-    echo json_encode($days);
-}
 
+}
+echo json_encode($days);
