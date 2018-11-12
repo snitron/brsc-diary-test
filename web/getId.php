@@ -58,7 +58,7 @@ if ($version != null) { //for eldery version support. delete in the future
         $sess_data['login'] = $login;
         $sess_data['password'] = $password;
         $_SESSION[$id] = $sess_data;
-        session_commit();
+
     } else
         $user = null;
 
