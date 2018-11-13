@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8e91c237-9d8a-4854-8473-4bed28e49b47" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="8e91c237-9d8a-4854-8473-4bed28e49b47" name="Default Changelist" comment="test">
+      <change beforePath="$PROJECT_DIR$/web/getId.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/getId.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -236,12 +236,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="2444" />
+          <entry key="php" value="2516" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="2444" />
+          <entry key="PHP" value="2516" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -263,8 +263,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/getIdNew.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="8" selection-start-line="8" selection-end-line="10" selection-end-column="29" />
+            <state relative-caret-position="561">
+              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
               <folding>
                 <element signature="e#72#90#0#PHP" expanded="true" />
               </folding>
@@ -320,11 +320,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/getId.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="50" column="36" lean-forward="true" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="36" />
+            <state relative-caret-position="578">
+              <caret line="53" column="52" selection-start-line="53" selection-start-column="52" selection-end-line="53" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -334,7 +334,7 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/parseMain.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="442">
@@ -386,9 +386,9 @@
         <option value="$PROJECT_DIR$/web/getIdFromSession.php" />
         <option value="$PROJECT_DIR$/web/getIdNew.php" />
         <option value="$PROJECT_DIR$/web/User.php" />
-        <option value="$PROJECT_DIR$/web/getId.php" />
         <option value="$PROJECT_DIR$/web/parseMain.php" />
         <option value="$PROJECT_DIR$/web/parseMainNew.php" />
+        <option value="$PROJECT_DIR$/web/getId.php" />
       </list>
     </option>
   </component>
@@ -505,14 +505,7 @@
       <workItem from="1541862051923" duration="11900000" />
       <workItem from="1541926348636" duration="2914000" />
       <workItem from="1542050324128" duration="3603000" />
-      <workItem from="1542107340845" duration="6714000" />
-    </task>
-    <task id="LOCAL-00134" summary="test">
-      <created>1541862102381</created>
-      <option name="number" value="00134" />
-      <option name="presentableId" value="LOCAL-00134" />
-      <option name="project" value="LOCAL" />
-      <updated>1541862102381</updated>
+      <workItem from="1542107340845" duration="7030000" />
     </task>
     <task id="LOCAL-00135" summary="test">
       <created>1541866335465</created>
@@ -850,14 +843,21 @@
       <option name="project" value="LOCAL" />
       <updated>1542134323351</updated>
     </task>
-    <option name="localTasksCounter" value="183" />
+    <task id="LOCAL-00183" summary="test">
+      <created>1542134943142</created>
+      <option name="number" value="00183" />
+      <option name="presentableId" value="LOCAL-00183" />
+      <option name="project" value="LOCAL" />
+      <updated>1542134943142</updated>
+    </task>
+    <option name="localTasksCounter" value="184" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93054000" />
+    <option name="totallyTimeSpent" value="93370000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49905124" visible="true" weight="0.13166311" />
@@ -989,23 +989,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/getId.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="50" column="36" lean-forward="true" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/getIdNew.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" selection-start-line="8" selection-end-line="10" selection-end-column="29" />
-          <folding>
-            <element signature="e#72#90#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/parseMainNew.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-442">
@@ -1017,6 +1000,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/getIdNew.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+          <folding>
+            <element signature="e#72#90#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/getId.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="53" column="52" selection-start-line="53" selection-start-column="52" selection-end-line="53" selection-end-column="52" />
         </state>
       </provider>
     </entry>
