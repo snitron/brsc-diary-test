@@ -34,9 +34,10 @@ if ($headers['User-Agent'] == 'Nitron Apps BRSC Diary Http Connector') {
             $userID = filter_input(INPUT_GET, "child_ids", FILTER_SANITIZE_STRING);
             $snoopy->submit("https://edu.brsc.ru/user/diary/diaryresult?UserId=" . $userID);
             $html = new Document($snoopy->results);
-            $result = new Person();
-            $result->name = parseName($html->find("tr")[0]->find("th")[0]->text());
-            $result->img = $html->find("span.pull-left")[1]->first("img")->attr("src");
+
+           $name = parseName($html->find("tr")[0]->find("th")[0]->text());
+
+           echo $name;
         } else {
             $child_ids = json_decode(filter_input(INPUT_GET, "child_ids", FILTER_SANITIZE_STRING));
 
