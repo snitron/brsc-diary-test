@@ -5,6 +5,11 @@ require "User.php";
 use Snoopy\Snoopy;
 use \DiDom\Document;
 
+
+ini_set('session.gc_maxlifetime', 0);
+ini_set('session.cookie_lifetime', 0);
+session_set_cookie_params(0);
+
 $login = filter_input(INPUT_GET, "login", FILTER_SANITIZE_STRING);
 $password = filter_input(INPUT_GET, "password", FILTER_SANITIZE_STRING);
 

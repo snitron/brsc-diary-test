@@ -4,4 +4,5 @@ class User{
     public $id = "";
     public $parent_id = "";
     public $sess_index = "";
+    public $sess_id = "";
 }

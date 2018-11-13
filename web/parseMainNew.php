@@ -27,6 +27,9 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 ini_set('session.use_cookies', 1);
 
+$token = filter_input(INPUT_GET, 'token', FILTER_SANITIZE_STRING);
+
+session_name($token);
 session_start();
 
 
