@@ -12,9 +12,6 @@ $password = filter_input(INPUT_GET, "password", FILTER_SANITIZE_STRING);
 $version = filter_input(INPUT_GET, "version", FILTER_SANITIZE_STRING);
 
 if ($version != null) { //for eldery version support. delete in the future
-    ini_set('session.use_cookies', 1);
-
-    session_start();
     $snoopy = new Snoopy();
 
     $post_array = array();
@@ -37,18 +34,15 @@ if ($version != null) { //for eldery version support. delete in the future
                 for ($i = 0; $i < count($child_ids); $i++)
                     $user->child_ids[$i] = parseId($child_ids[$i]->getAttribute("href"));
                 $user->id = null;
-                $user->sess_index = "user_index" . $user->child_ids[0];
                 $user->parent_id = parseId($html->find("a.h5")[0]->getAttribute("href"));
             } else {
                 $user->child_ids = null;
                 $user->id = parseId($html->find("a.h5")[0]->getAttribute("href"));
-                $user->sess_index = "user_index" . $user->id;
                 $user->parent_id = null;
             }
         } else {
             $user->child_ids = null;
             $user->id = parseId($html->find("a.h5")[0]->getAttribute("href"));
-            $user->sess_index = "user_index" . $user->id;
             $user->parent_id = null;
         }
 
