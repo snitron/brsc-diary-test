@@ -48,7 +48,7 @@ if ($version != null) { //for eldery version support. delete in the future
             $user->parent_id = null;
         }
 
-        $user->sess_id = session_id();
+        $user->sess_id = "PHPSESSID=" . session_id() . ";";
 
         $sess_data = array();
 

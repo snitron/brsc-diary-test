@@ -334,20 +334,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/parseMain.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="28" column="3" selection-start-line="28" selection-start-column="3" selection-end-line="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/parseMainNew.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+            <state relative-caret-position="442">
+              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
             </state>
           </provider>
         </entry>
@@ -468,12 +459,13 @@
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web/test" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\brsc-diary-test\web" />
       <recent name="C:\xampp\htdocs\brscparse\sleepy-stream-55128" />
       <recent name="C:\xampp\htdocs\brscparse\sleepy-stream-55128\web" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/test" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -513,21 +505,7 @@
       <workItem from="1541862051923" duration="11900000" />
       <workItem from="1541926348636" duration="2914000" />
       <workItem from="1542050324128" duration="3603000" />
-      <workItem from="1542107340845" duration="5926000" />
-    </task>
-    <task id="LOCAL-00132" summary="test">
-      <created>1541791949192</created>
-      <option name="number" value="00132" />
-      <option name="presentableId" value="LOCAL-00132" />
-      <option name="project" value="LOCAL" />
-      <updated>1541791949192</updated>
-    </task>
-    <task id="LOCAL-00133" summary="test">
-      <created>1541792504593</created>
-      <option name="number" value="00133" />
-      <option name="presentableId" value="LOCAL-00133" />
-      <option name="project" value="LOCAL" />
-      <updated>1541792504593</updated>
+      <workItem from="1542107340845" duration="6714000" />
     </task>
     <task id="LOCAL-00134" summary="test">
       <created>1541862102381</created>
@@ -858,11 +836,25 @@
       <option name="project" value="LOCAL" />
       <updated>1542133885256</updated>
     </task>
-    <option name="localTasksCounter" value="181" />
+    <task id="LOCAL-00181" summary="test">
+      <created>1542134267198</created>
+      <option name="number" value="00181" />
+      <option name="presentableId" value="LOCAL-00181" />
+      <option name="project" value="LOCAL" />
+      <updated>1542134267198</updated>
+    </task>
+    <task id="LOCAL-00182" summary="test">
+      <created>1542134323351</created>
+      <option name="number" value="00182" />
+      <option name="presentableId" value="LOCAL-00182" />
+      <option name="project" value="LOCAL" />
+      <updated>1542134323351</updated>
+    </task>
+    <option name="localTasksCounter" value="183" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92266000" />
+    <option name="totallyTimeSpent" value="93054000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
@@ -1014,17 +1006,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/parseMain.php">
+    <entry file="file://$PROJECT_DIR$/web/parseMainNew.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="28" column="3" selection-start-line="28" selection-start-column="3" selection-end-line="30" />
+        <state relative-caret-position="-442">
+          <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/parseMainNew.php">
+    <entry file="file://$PROJECT_DIR$/web/parseMain.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+        <state relative-caret-position="442">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
         </state>
       </provider>
     </entry>
