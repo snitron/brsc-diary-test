@@ -21,7 +21,9 @@ class DaySheldule
         array()
     );
 }
-
+ini_set('display_startup_errors', 1);
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 ini_set('session.gc_maxlifetime', 0);
 ini_set('session.cookie_lifetime', 0);
 session_set_cookie_params(0);
