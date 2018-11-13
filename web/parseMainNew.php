@@ -36,12 +36,13 @@ $userID = filter_input(INPUT_POST, 'userID', FILTER_SANITIZE_STRING);
 $version = filter_input(INPUT_POST, 'version', FILTER_SANITIZE_STRING);
 $snoopy = new Snoopy();
 
+$post_array = array();
 if($version != null){
     $sess_index = filter_input(INPUT_POST, 'sess_index', FILTER_SANITIZE_STRING);
 
     $data = $_SESSION[$sess_index];
 
-    $post_array = array();
+
     $post_array['Login'] = $data['login'];
     $post_array['Password'] = $data['password'];
 } else{
