@@ -28,19 +28,31 @@ if ($headers['User-Agent'] == 'Nitron Apps BRSC Diary Http Connector') {
     $snoopy->results;
 
     if ($version != null) {
-        $child_ids = json_decode(filter_input(INPUT_GET, "child_ids", FILTER_SANITIZE_STRING));
+        $option = filter_input(INPUT_GET, "option", FILTER_SANITIZE_STRING);
 
-        $names = array();
-
-        for ($i = 0; $i < count($child_ids); $i++) {
+        if ($option == "one") {
+            $userID = filter_input(INPUT_GET, "child_ids", FILTER_SANITIZE_STRING);
             $snoopy->submit("https://edu.brsc.ru/user/diary/diaryresult?UserId=" . $userID);
             $html = new Document($snoopy->results);
+            $result = new Person();
+            $result->name = parseName($html->find("tr")[0]->find("th")[0]->text());
+            $result->img = $html->find("span.pull-left")[1]->first("img")->attr("src");
+        } else {
+            $child_ids = json_decode(filter_input(INPUT_GET, "child_ids", FILTER_SANITIZE_STRING));
 
-            $names = parseName($html->find("tr")[0]->find("th")[0]->text());
+            $names = array();
+
+            for ($i = 0; $i < count($child_ids); $i++) {
+                $snoopy->submit("https://edu.brsc.ru/user/diary/diaryresult?UserId=" . $userID);
+                $html = new Document($snoopy->results);
+
+                $names = parseName($html->find("tr")[0]->find("th")[0]->text());
+            }
+
+            echo json_encode($names);
         }
-
-        echo json_encode($names);
     } else {
+        $userID = filter_input(INPUT_GET, "child_ids", FILTER_SANITIZE_STRING);
         $snoopy->submit("https://edu.brsc.ru/user/diary/diaryresult?UserId=" . $userID);
         $html = new Document($snoopy->results);
         $result = new Person();
