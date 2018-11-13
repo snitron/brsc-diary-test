@@ -58,7 +58,7 @@ $snoopy->maxredirs = 2;
 $snoopy->submit("https://edu.brsc.ru/Logon/Index", $post_array);
 $snoopy->results;
 
-$week = filter_input(INPUT_POST, "week", FILTER_SANITIZE_STRING);
+$week = filter_input(INPUT_GET, "week", FILTER_SANITIZE_STRING);
 $snoopy->submit("https://edu.brsc.ru/User/Diary?UserId=" . $userID . "&Week=" . $week . "&dep=0");
 
 $html = new Document($snoopy->results);
