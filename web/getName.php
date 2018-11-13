@@ -4,18 +4,12 @@ require __DIR__ . "/../vendor/autoload.php";
 use Snoopy\Snoopy;
 use DiDom\Document;
 
-class Person
-{
-    public $name = "";
-    public $img = "";
-}
-
 $headers = getallheaders();
 if ($headers['User-Agent'] == 'Nitron Apps BRSC Diary Http Connector') {
 
     $login = filter_input(INPUT_GET, "login", FILTER_SANITIZE_STRING);
     $password = filter_input(INPUT_GET, "password", FILTER_SANITIZE_STRING);
-    $userID = filter_input(INPUT_GET, "userID", FILTER_SANITIZE_STRING);
+    $child_ids = json_decode(filter_input(INPUT_GET, "child_ids", FILTER_SANITIZE_STRING));
 
     $snoopy = new Snoopy();
 
@@ -27,15 +21,16 @@ if ($headers['User-Agent'] == 'Nitron Apps BRSC Diary Http Connector') {
     $snoopy->submit("https://edu.brsc.ru/Logon/Index", $post_array);
     $snoopy->results;
 
-    $snoopy->submit("https://edu.brsc.ru/user/diary/diaryresult?UserId=" . $userID);
-    $html = new Document($snoopy->results);
+    $names = array();
 
-    $result = new Person();
+    for($i = 0; $i < count($child_ids); $i++) {
+        $snoopy->submit("https://edu.brsc.ru/user/diary/diaryresult?UserId=" . $userID);
+        $html = new Document($snoopy->results);
 
-    $result->name = parseName($html->find("tr")[0]->find("th")[0]->text());
-    $result->img = $html->find("span.pull-left")[1]->first("img")->attr("src");
+        $names = parseName($html->find("tr")[0]->find("th")[0]->text());
+    }
 
-    echo json_encode($result);
+    echo json_encode($names);
 }
 
 function parseName($string)
