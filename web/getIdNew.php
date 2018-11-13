@@ -34,12 +34,12 @@ if (count($check_login) != 0) {
         } else {
             $user->child_ids = null;
             $user->id = parseId($html->find("a.h5")[0]->getAttribute("href"));
-            $user->sess_index = "user_index" . $id;
+            $user->sess_index = "user_index" . $user->id;
         }
     } else {
         $user->child_ids = null;
         $user->id = parseId($html->find("a.h5")[0]->getAttribute("href"));
-        $user->sess_index = "user_index" . $id;
+        $user->sess_index = "user_index" . $user->id;
     }
 
     $sess_data = array();
