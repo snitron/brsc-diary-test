@@ -27,9 +27,6 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 ini_set('session.use_cookies', 1);
 
-$token = filter_input(INPUT_GET, 'token', FILTER_SANITIZE_STRING);
-
-session_name($token);
 session_start();
 
 
@@ -119,6 +116,5 @@ for ($i = 0; $i < count($elements); $i++) {
 
     $day->dayName = strip_tags($daysNames[$i + 1]->text());
     $days[$i] = $day;
-
 }
 echo json_encode($days);

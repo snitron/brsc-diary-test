@@ -12,12 +12,6 @@ $password = filter_input(INPUT_GET, "password", FILTER_SANITIZE_STRING);
 $version = filter_input(INPUT_GET, "version", FILTER_SANITIZE_STRING);
 
 if ($version != null) { //for eldery version support. delete in the future
-    try {
-        $token = md5(bin2hex(random_bytes(16)));
-    } catch (Exception $e) {
-    }
-
-    session_name($token);
     session_start();
 
     $snoopy = new Snoopy();
@@ -54,7 +48,7 @@ if ($version != null) { //for eldery version support. delete in the future
             $user->parent_id = null;
         }
 
-        $user->sess_id = $token;
+        $user->sess_id = session_id();
 
         $sess_data = array();
 
