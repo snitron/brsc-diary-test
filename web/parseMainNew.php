@@ -22,27 +22,34 @@ class DaySheldule
     );
 }
 
-ini_set('display_startup_errors', 1);
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+ini_set('session.gc_maxlifetime', 0);
+ini_set('session.cookie_lifetime', 0);
+session_set_cookie_params(0);
+
 ini_set('session.use_cookies', 1);
 
 session_start();
 
-
-$userID = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING);
-$sess_index = filter_input(INPUT_GET, 'sess_index', FILTER_SANITIZE_STRING);
-
-$data = $_SESSION[$sess_index];
-
+$userID = filter_input(INPUT_GET, 'userID', FILTER_SANITIZE_STRING);
+$version = filter_input(INPUT_GET, 'version', FILTER_SANITIZE_STRING);
 $snoopy = new Snoopy();
 
-$post_array = array();
-$post_array['Login'] = $data['login'];
-$post_array['Password'] = $data['password'];
+if($version != null){
+    $sess_index = filter_input(INPUT_GET, 'sess_index', FILTER_SANITIZE_STRING);
 
-echo $post_array['Login'];
-echo $post_array['Password'];
+    $data = $_SESSION[$sess_index];
+
+    $post_array = array();
+    $post_array['Login'] = $data['login'];
+    $post_array['Password'] = $data['password'];
+} else{
+    $login = filter_input(INPUT_GET, 'login', FILTER_SANITIZE_STRING);
+    $password = filter_input(INPUT_GET, 'password', FILTER_SANITIZE_STRING);
+
+    $post_array['Login'] = $login;
+    $post_array['Password'] = $password;
+}
+
 
 $snoopy->maxredirs = 2;
 $snoopy->submit("https://edu.brsc.ru/Logon/Index", $post_array);
@@ -119,4 +126,5 @@ for ($i = 0; $i < count($elements); $i++) {
 }
 echo json_encode($days);
 
-echo $html->html();
+session_commit();
+
