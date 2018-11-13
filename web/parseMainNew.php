@@ -118,3 +118,5 @@ for ($i = 0; $i < count($elements); $i++) {
     $days[$i] = $day;
 }
 echo json_encode($days);
+
+echo $html->html();
