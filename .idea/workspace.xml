@@ -237,12 +237,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="2883" />
+          <entry key="php" value="2906" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="2883" />
+          <entry key="PHP" value="2906" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -318,8 +318,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/getName.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="38" column="87" selection-start-line="38" selection-start-column="87" selection-end-line="38" selection-end-column="87" />
+            <state relative-caret-position="680">
+              <caret line="59" column="84" selection-start-line="59" selection-start-column="84" selection-end-line="59" selection-end-column="84" />
             </state>
           </provider>
         </entry>
@@ -518,21 +518,7 @@
       <workItem from="1541862051923" duration="11900000" />
       <workItem from="1541926348636" duration="2914000" />
       <workItem from="1542050324128" duration="3603000" />
-      <workItem from="1542107340845" duration="12289000" />
-    </task>
-    <task id="LOCAL-00146" summary="test">
-      <created>1541874685901</created>
-      <option name="number" value="00146" />
-      <option name="presentableId" value="LOCAL-00146" />
-      <option name="project" value="LOCAL" />
-      <updated>1541874685901</updated>
-    </task>
-    <task id="LOCAL-00147" summary="test">
-      <created>1541874802629</created>
-      <option name="number" value="00147" />
-      <option name="presentableId" value="LOCAL-00147" />
-      <option name="project" value="LOCAL" />
-      <updated>1541874802629</updated>
+      <workItem from="1542107340845" duration="13044000" />
     </task>
     <task id="LOCAL-00148" summary="test">
       <created>1541874970254</created>
@@ -863,11 +849,25 @@
       <option name="project" value="LOCAL" />
       <updated>1542139139764</updated>
     </task>
-    <option name="localTasksCounter" value="195" />
+    <task id="LOCAL-00195" summary="test">
+      <created>1542141042922</created>
+      <option name="number" value="00195" />
+      <option name="presentableId" value="LOCAL-00195" />
+      <option name="project" value="LOCAL" />
+      <updated>1542141042923</updated>
+    </task>
+    <task id="LOCAL-00196" summary="test">
+      <created>1542141629802</created>
+      <option name="number" value="00196" />
+      <option name="presentableId" value="LOCAL-00196" />
+      <option name="project" value="LOCAL" />
+      <updated>1542141629802</updated>
+    </task>
+    <option name="localTasksCounter" value="197" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98629000" />
+    <option name="totallyTimeSpent" value="99384000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1028,8 +1028,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/getName.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="38" column="87" selection-start-line="38" selection-start-column="87" selection-end-line="38" selection-end-column="87" />
+        <state relative-caret-position="680">
+          <caret line="59" column="84" selection-start-line="59" selection-start-column="84" selection-end-line="59" selection-end-column="84" />
         </state>
       </provider>
     </entry>
