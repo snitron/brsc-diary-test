@@ -8,13 +8,6 @@ use \DiDom\Document;
 $login = filter_input(INPUT_GET, "login", FILTER_SANITIZE_STRING);
 $password = filter_input(INPUT_GET, "password", FILTER_SANITIZE_STRING);
 
-
-try {
-    $token = md5(bin2hex(random_bytes(16)));
-} catch (Exception $e) {
-}
-
-session_name($token);
 session_start();
 $snoopy = new Snoopy();
 
