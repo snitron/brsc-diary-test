@@ -37,18 +37,21 @@ if ($version != null) { //for eldery version support. delete in the future
                     $user->child_ids[$i] = parseId($child_ids[$i]->getAttribute("href"));
                 $user->id = null;
                 $user->parent_id = parseId($html->find("a.h5")[0]->getAttribute("href"));
+                $user->sess_index = "user_index" . $user->child_ids[0];
             } else {
                 $user->child_ids = null;
                 $user->id = parseId($html->find("a.h5")[0]->getAttribute("href"));
+                $user->sess_index = "user_index" . $user->id;
                 $user->parent_id = null;
             }
         } else {
             $user->child_ids = null;
             $user->id = parseId($html->find("a.h5")[0]->getAttribute("href"));
+            $user->sess_index = "user_index" . $user->id;
             $user->parent_id = null;
         }
 
-        $user->sess_id = "PHPSESSID=" . session_id() . ";";
+        $user->sess_id = "PHPSESSID=" . session_id();
 
         $sess_data = array();
 
