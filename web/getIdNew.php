@@ -42,8 +42,6 @@ if (count($check_login) != 0) {
         $user->sess_index = "user_index" . $id;
     }
 
-    $user->session_id = $token;
-
     $sess_data = array();
 
     $sess_data['login'] = $login;
