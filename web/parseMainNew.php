@@ -32,13 +32,13 @@ ini_set('session.use_cookies', 1);
 
 session_start();
 
-$userID = filter_input(INPUT_POST, 'userID', FILTER_SANITIZE_STRING);
-$version = filter_input(INPUT_POST, 'version', FILTER_SANITIZE_STRING);
+$userID = filter_input(INPUT_GET, 'userID', FILTER_SANITIZE_STRING);
+$version = filter_input(INPUT_GET, 'version', FILTER_SANITIZE_STRING);
 $snoopy = new Snoopy();
 
 $post_array = array();
 if($version != null){
-    $sess_index = filter_input(INPUT_POST, 'sess_index', FILTER_SANITIZE_STRING);
+    $sess_index = filter_input(INPUT_GET, 'sess_index', FILTER_SANITIZE_STRING);
 
     $data = $_SESSION[$sess_index];
 
@@ -46,8 +46,8 @@ if($version != null){
     $post_array['Login'] = $data['login'];
     $post_array['Password'] = $data['password'];
 } else{
-    $login = filter_input(INPUT_POST, 'login', FILTER_SANITIZE_STRING);
-    $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+    $login = filter_input(INPUT_GET, 'login', FILTER_SANITIZE_STRING);
+    $password = filter_input(INPUT_GET, 'password', FILTER_SANITIZE_STRING);
 
     $post_array['Login'] = $login;
     $post_array['Password'] = $password;
