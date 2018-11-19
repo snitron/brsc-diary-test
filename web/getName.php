@@ -51,9 +51,11 @@ $headers = getallheaders();
                 $html = new Document($snoopy->results);
 
                 $person->child_ids[$i] = trim(parseName($html->find("tr")[0]->find("th")[0]->text()));
+
+                if($i == count($child_ids) - 1)
+                    $person->name = trim($html->find("div.pull-right")[0]->find("h5")[0]->text());
             }
 
-            $person->name = null;
             echo json_encode($person);
         }
     } else {
