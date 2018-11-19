@@ -12,7 +12,7 @@ $password = filter_input(INPUT_GET, "password", FILTER_SANITIZE_STRING);
 $version = filter_input(INPUT_GET, "version", FILTER_SANITIZE_STRING);
 
 if ($version != null) { //for eldery version support. delete in the future
-    session_start();
+  //  session_start();
 
     $snoopy = new Snoopy();
 
@@ -52,12 +52,12 @@ if ($version != null) { //for eldery version support. delete in the future
         }
 
         $user->sess_id = "PHPSESSID=" . session_id();
-
+/*
         $sess_data = array();
 
         $sess_data['login'] = $login;
         $sess_data['password'] = $password;
-        $_SESSION[$id] = $sess_data;
+        $_SESSION[$id] = $sess_data;*/
 
     } else
         $user = null;
