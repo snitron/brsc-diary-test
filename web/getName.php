@@ -59,7 +59,7 @@ if ($headers['User-Agent'] == 'Nitron Apps BRSC Diary Http Connector') {
             echo json_encode($person);
         }
     } else {
-        $userID = filter_input(INPUT_GET, "child_ids", FILTER_SANITIZE_STRING);
+        $userID = filter_input(INPUT_GET, "userID", FILTER_SANITIZE_STRING);
         $snoopy->submit("https://edu.brsc.ru/user/diary/diaryresult?UserId=" . $userID);
         $html = new Document($snoopy->results);
         $result = new PersonOld();
