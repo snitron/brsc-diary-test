@@ -33,7 +33,7 @@ $headers = getallheaders();
     if ($version != null) {
         $option = filter_input(INPUT_GET, "option", FILTER_SANITIZE_STRING);
         $person = new Person();
-
+        
         if ($option == "one") {
             $person->child_ids = null;
             $userID = filter_input(INPUT_GET, "child_ids", FILTER_SANITIZE_STRING);
