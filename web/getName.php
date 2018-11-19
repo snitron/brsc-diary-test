@@ -10,7 +10,7 @@ class PersonOld {
 }
 
 class Person {
-    public $child_names = array();
+    public $child_ids = array();
     public $name = "";
 }
 
@@ -35,7 +35,7 @@ $headers = getallheaders();
         $person = new Person();
 
         if ($option == "one") {
-            $person->child_names = null;
+            $person->child_ids = null;
             $userID = filter_input(INPUT_GET, "child_ids", FILTER_SANITIZE_STRING);
             $snoopy->submit("https://edu.brsc.ru/user/diary/diaryresult?UserId=" . $userID);
             $html = new Document($snoopy->results);
@@ -50,7 +50,7 @@ $headers = getallheaders();
                 $snoopy->submit("https://edu.brsc.ru/user/diary/diaryresult?UserId=" . $child_ids[$i]);
                 $html = new Document($snoopy->results);
 
-                $person->child_names[$i] = trim(parseName($html->find("tr")[0]->find("th")[0]->text()));
+                $person->child_ids[$i] = trim(parseName($html->find("tr")[0]->find("th")[0]->text()));
             }
 
             $person->name = null;
