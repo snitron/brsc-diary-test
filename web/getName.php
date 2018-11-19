@@ -16,7 +16,6 @@ class Person {
 
 $headers = getallheaders();
 if ($headers['User-Agent'] == 'Nitron Apps BRSC Diary Http Connector') {
-
     $login = filter_input(INPUT_GET, "login", FILTER_SANITIZE_STRING);
     $password = filter_input(INPUT_GET, "password", FILTER_SANITIZE_STRING);
     $version = filter_input(INPUT_GET, "version", FILTER_SANITIZE_STRING);
@@ -54,6 +53,7 @@ if ($headers['User-Agent'] == 'Nitron Apps BRSC Diary Http Connector') {
                 $person->child_names[$i] = trim(parseName($html->find("tr")[0]->find("th")[0]->text()));
             }
 
+            $person->name = null;
             echo json_encode($person);
         }
     } else {
