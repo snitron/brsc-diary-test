@@ -33,7 +33,7 @@ $headers = getallheaders();
     if ($version != null) {
         $option = filter_input(INPUT_GET, "option", FILTER_SANITIZE_STRING);
         $person = new Person();
-        
+
         if ($option == "one") {
             $person->child_ids = null;
             $userID = filter_input(INPUT_GET, "child_ids", FILTER_SANITIZE_STRING);
@@ -69,5 +69,15 @@ $headers = getallheaders();
 
 function parseName($string)
 {
-    return substr($string, 0, strpos($string, ','));
+    return prepareName(substr($string, 0, strpos($string, ',')));
+}
+
+function prepareName($string){
+    if($string{0} == '"')
+        $string = substr($string, 1);
+
+    if($string{strlen($string) - 1} == '"')
+        $string = substr($string, 0, strlen($string) - 1);
+
+    return $string;
 }
