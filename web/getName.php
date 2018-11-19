@@ -15,7 +15,7 @@ class Person {
 }
 
 $headers = getallheaders();
-//if ($headers['User-Agent'] == 'Nitron Apps BRSC Diary Http Connector') {
+if ($headers['User-Agent'] == 'Nitron Apps BRSC Diary Http Connector') {
     $login = filter_input(INPUT_GET, "login", FILTER_SANITIZE_STRING);
     $password = filter_input(INPUT_GET, "password", FILTER_SANITIZE_STRING);
     $version = filter_input(INPUT_GET, "version", FILTER_SANITIZE_STRING);
@@ -67,7 +67,7 @@ $headers = getallheaders();
         $result->img = $html->find("span.pull-left")[1]->first("img")->attr("src");
         echo json_encode($result);
     }
-//}
+}
 
 function parseName($string)
 {

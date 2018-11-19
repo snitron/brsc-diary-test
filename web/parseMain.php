@@ -23,7 +23,7 @@ class DaySheldule
 }
 
 $headers = getallheaders();
-//if ($headers['User-Agent'] == 'Nitron Apps BRSC Diary Http Connector') {
+if ($headers['User-Agent'] == 'Nitron Apps BRSC Diary Http Connector') {
     $action = filter_input(INPUT_GET, "action", FILTER_SANITIZE_STRING);
 
     $login = filter_input(INPUT_GET, 'login', FILTER_SANITIZE_STRING);
@@ -111,5 +111,5 @@ $headers = getallheaders();
     }
 
     echo json_encode($days);
-//}
+}
 
