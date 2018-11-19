@@ -47,7 +47,7 @@ $headers = getallheaders();
             $child_ids = json_decode(filter_input(INPUT_GET, "child_ids", FILTER_SANITIZE_STRING));
 
             for ($i = 0; $i < count($child_ids); $i++) {
-                $snoopy->submit("https://edu.brsc.ru/user/diary/diaryresult?UserId=" . $userID);
+                $snoopy->submit("https://edu.brsc.ru/user/diary/diaryresult?UserId=" . $child_ids[$i]);
                 $html = new Document($snoopy->results);
 
                 $person->child_names[$i] = trim(parseName($html->find("tr")[0]->find("th")[0]->text()));
