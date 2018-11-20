@@ -53,7 +53,7 @@ if ($version != null) { //for eldery version support. delete in the future
 
            $user->id = null;
            $user->sess_index = "user_index" . $user->id;
-           $user->parent_id = null;
+           $user->parent_id = $user->parent_id[0];
         } else {
             $user->child_ids = null;
             $user->id = parseId($html->find("a.h5")[0]->getAttribute("href"));
