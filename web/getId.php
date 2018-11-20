@@ -74,7 +74,6 @@ if ($version != null) { //for eldery version support. delete in the future
 
 
     echo json_encode($user);
-    echo $html->html();
 } else {
     $snoopy = new Snoopy();
 
